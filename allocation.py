@@ -109,7 +109,7 @@ def improvement_move(spec, priority):
     all_good = True
     good_topic = ''
     for topic, value in spec.items():
-        if not value:
+        if len(value) < t_min:
             not_enough.append(topic)
             all_good = False
     for topic, value in spec.items():
