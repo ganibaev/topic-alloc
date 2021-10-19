@@ -1,5 +1,6 @@
 import pandas as pd
 import copy
+from pprint import pprint
 
 FILE_PATH = 'random_pref_list.xlsx'
 
@@ -11,7 +12,7 @@ topic_num = len(topics)
 names = list(pref_table.index)
 
 # Set min and max number of teachers per topic
-t_min, t_max = (2, 3)
+t_min, t_max = (1, 1)
 
 spec = {topic: [] for topic in topics}
 
@@ -153,4 +154,6 @@ if len(names) >= t_min * topic_num:
         if prev_how_bad == how_bad(spec):
                 break
 
-print('Optimal allocation:', spec, '\nFitness:', fitness(spec))
+print('Optimal allocation:')
+pprint(spec)
+print('Fitness:', fitness(spec))
