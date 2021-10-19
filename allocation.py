@@ -12,7 +12,7 @@ topic_num = len(topics)
 names = list(pref_table.index)
 
 # Set min and max number of teachers per topic
-t_min, t_max = (1, 1)
+t_min, t_max = (1, 2)
 
 spec = {topic: [] for topic in topics}
 
