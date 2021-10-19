@@ -1,9 +1,9 @@
 import pandas as pd
 import copy
 
-FILE_NAME = 'random_pref_list.xlsx'
+FILE_PATH = 'random_pref_list.xlsx'
 
-pref_table = pd.read_excel(FILE_NAME, index_col=0)
+pref_table = pd.read_excel(FILE_PATH, index_col=0)
 pref_table = pref_table.sample(frac=1)
 
 topics = list(pref_table.columns)
@@ -11,7 +11,7 @@ topic_num = len(topics)
 names = list(pref_table.index)
 
 # Set min and max number of teachers per topic
-t_min, t_max = (1, 3)
+t_min, t_max = (2, 3)
 
 spec = {topic: [] for topic in topics}
 
